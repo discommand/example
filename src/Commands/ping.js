@@ -3,10 +3,12 @@ const { ApplicationCommandType } = require("discord.js");
 
 module.exports = class PingCommands extends Command {
   constructor() {
-    super();
-    this.type = ApplicationCommandType.ChatInput;
-    this.name = "ping";
-    this.description = "Pong";
+    super("ping");
+    this.data = {
+      type: ApplicationCommandType.ChatInput,
+      name: "ping",
+      description: "Pong",
+    };
   }
   execute(interaction) {
     interaction.reply("Pong");

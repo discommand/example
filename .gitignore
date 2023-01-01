@@ -143,6 +143,7 @@ dist
 .svelte-kit
 
 .vscode/
+.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
