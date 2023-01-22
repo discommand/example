@@ -1,17 +1,15 @@
-const { Command } = require("discommand");
-const {
+import { Command } from "discommand";
+import {
   ApplicationCommandType,
   UserContextMenuCommandInteraction,
-} = require("discord.js");
+} from "discord.js";
 
-module.exports = class SayUserNameUserContextMenus extends Command {
+export default class SayUserNameUserContextMenus extends Command {
   constructor() {
-    super("sayUserName");
-    this.data = {
+    super({
       type: ApplicationCommandType.User,
       name: "sayUserName",
-    };
-    this.name = "sayUserName";
+    });
   }
 
   /**
@@ -21,4 +19,4 @@ module.exports = class SayUserNameUserContextMenus extends Command {
   execute(interaction) {
     interaction.reply(`User Name is ${interaction.targetUser}`);
   }
-};
+}

@@ -1,16 +1,22 @@
-const { Command } = require("discommand");
-const { ApplicationCommandType } = require("discord.js");
+import { Command } from "discommand";
+import {
+  ApplicationCommandType,
+  ChatInputCommandInteraction,
+} from "discord.js";
 
-module.exports = class PingCommands extends Command {
+export default class PingCommands extends Command {
   constructor() {
-    super("ping");
-    this.data = {
+    super({
       type: ApplicationCommandType.ChatInput,
       name: "ping",
       description: "Pong",
-    };
+    });
   }
+  /**
+   *
+   * @param {ChatInputCommandInteraction} interaction
+   * */
   execute(interaction) {
     interaction.reply("Pong");
   }
-};
+}
